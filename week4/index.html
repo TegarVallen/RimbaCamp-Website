@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Silih Camp's - Week 4</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <h1>Silih Camp's</h1>
+      <p>Lihat alat yang tersedia, bandingkan harga sewa per hari, dan cek stoknya sebelum memesan.</p>
+    </div>
+  </header>
+
+  <div class="toolbar-outer">
+    <div class="toolbar">
+      <input type="search" id="cari" placeholder="Cari alat, misalnya tenda" aria-label="Cari alat">
+      <select id="kategori" aria-label="Filter kategori">
+        <option value="">Semua kategori</option>
+      </select>
+      <label class="check">
+        <input type="checkbox" id="hanya-tersedia"> Hanya yang tersedia
+      </label>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <div id="status" class="status" hidden></div>
+    <p id="jumlah" class="count" hidden></p>
+    <section id="daftar-alat" class="grid" aria-live="polite"></section>
+  </main>
+
+  <dialog id="dialog-cek">
+    <h2 id="cek-judul">Cek ketersediaan</h2>
+    <p id="cek-info"></p>
+    <label class="field" for="cek-hari">Lama sewa (hari)</label>
+    <input class="field-input" type="number" id="cek-hari" min="1" value="1">
+    <label class="field" for="cek-jumlah">Jumlah unit</label>
+    <input class="field-input" type="number" id="cek-jumlah" min="1" value="1">
+    <div id="cek-hasil" class="hasil" hidden></div>
+    <div class="actions">
+      <button type="button" class="ghost" id="cek-tutup">Tutup</button>
+      <button type="button" id="cek-hitung">Hitung sewa</button>
+    </div>
+  </dialog>
+
+  <footer>Website Penyewaan Alat Camping &middot; Week 4: data dari API dengan JavaScript</footer>
+  <script src="api.js"></script>
+  <script src="state.js"></script>
+  <script src="render.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
