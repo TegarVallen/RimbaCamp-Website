@@ -1,0 +1,103 @@
+:root {
+  --pine: #1f3d2b;
+  --moss: #4f7a46;
+  --mist: #eef3ef;
+  --paper: #ffffff;
+  --lake: #1d6fa5;
+  --sun: #f2b705;
+  --danger: #b3261e;
+  --ink: #17231c;
+  --muted: #5d6b62;
+  --line: #cfdbd2;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  color: var(--ink);
+  background: var(--mist);
+  line-height: 1.5;
+}
+header.hero {
+  background: var(--pine);
+  color: #fff;
+  padding: 2.5rem 1.25rem 3rem;
+}
+.wrap { max-width: 1080px; margin: 0 auto; }
+.hero h1 { margin: 0 0 .4rem; font-size: clamp(1.8rem, 4vw, 2.8rem); letter-spacing: -.02em; }
+.hero p { margin: 0; max-width: 56ch; color: #cfe3d3; }
+
+.toolbar-outer { padding: 0 1.25rem; }
+.toolbar {
+  display: flex; flex-wrap: wrap; gap: .75rem; align-items: center;
+  margin: -1.4rem auto 1.5rem; padding: .9rem;
+  background: var(--paper); border: 1px solid var(--line); border-radius: 10px;
+  max-width: 1080px; box-shadow: 0 6px 18px rgba(23,35,28,.08);
+}
+.toolbar input[type=search], .toolbar select {
+  padding: .6rem .75rem; border: 1px solid var(--line); border-radius: 8px;
+  font: inherit; background: #fff; min-width: 0;
+}
+.toolbar input[type=search] { flex: 1 1 220px; }
+.toolbar label.check { display: flex; align-items: center; gap: .4rem; color: var(--muted); }
+main.wrap { padding: 0 1.25rem 3rem; }
+
+.status { padding: 1.2rem; border-radius: 10px; background: var(--paper); border: 1px solid var(--line); }
+.status.error { border-color: var(--danger); color: var(--danger); }
+.status button { margin-left: .75rem; }
+.spinner {
+  display: inline-block; width: 1rem; height: 1rem; margin-right: .6rem; vertical-align: -2px;
+  border: 3px solid var(--line); border-top-color: var(--moss); border-radius: 50%;
+  animation: spin .8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .spinner { animation: none; } }
+
+.count { color: var(--muted); margin: 0 0 1rem; }
+.grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+
+/* kartu berbentuk hang-tag alat camping */
+.card {
+  position: relative; background: var(--paper); border: 1px solid var(--line);
+  border-top: 6px solid var(--moss); border-radius: 4px 4px 12px 12px;
+  padding: 1.6rem 1.1rem 1.1rem; display: flex; flex-direction: column; gap: .5rem;
+}
+.card::before {
+  content: ""; position: absolute; top: .5rem; left: 50%; width: 14px; height: 14px;
+  margin-left: -7px; border-radius: 50%; background: var(--mist); border: 2px solid var(--line);
+}
+.card.habis { border-top-color: var(--muted); opacity: .8; }
+.icon { font-size: 2.4rem; line-height: 1; }
+.card h3 { margin: 0; font-size: 1.1rem; }
+.kategori { color: var(--muted); font-size: .85rem; }
+.card p { margin: 0; color: var(--muted); font-size: .92rem; flex: 1; }
+.harga { font-size: 1.15rem; font-weight: 700; color: var(--pine); }
+.harga small { font-weight: 400; color: var(--muted); }
+.badge { display: inline-block; padding: .15rem .6rem; border-radius: 99px; font-size: .8rem; font-weight: 600; }
+.badge.ok { background: #dcefd9; color: #1d5a22; }
+.badge.no { background: #f3d9d7; color: var(--danger); }
+.row { display: flex; justify-content: space-between; align-items: center; gap: .5rem; }
+
+button, .btn {
+  font: inherit; cursor: pointer; border: 0; border-radius: 8px;
+  padding: .55rem .9rem; background: var(--lake); color: #fff; font-weight: 600;
+  text-decoration: none; display: inline-block; text-align: center;
+}
+button:hover, .btn:hover { filter: brightness(1.1); }
+button:disabled { background: var(--line); color: var(--muted); cursor: not-allowed; }
+button.ghost, .btn.ghost { background: transparent; color: var(--lake); border: 1px solid var(--lake); }
+:focus-visible { outline: 3px solid var(--sun); outline-offset: 2px; }
+
+dialog { border: 0; border-radius: 12px; padding: 1.4rem; max-width: 420px; width: calc(100% - 2rem); }
+dialog::backdrop { background: rgba(23,35,28,.55); }
+dialog h2 { margin-top: 0; }
+label.field { display: block; margin: .7rem 0 .2rem; font-weight: 600; }
+.field-input { width: 100%; padding: .55rem; border: 1px solid var(--line); border-radius: 8px; font: inherit; }
+.hasil { margin-top: 1rem; padding: .8rem; border-radius: 8px; background: var(--mist); }
+.hasil.bad { background: #f3d9d7; color: var(--danger); }
+.actions { display: flex; gap: .6rem; margin-top: 1rem; justify-content: flex-end; }
+.cek-box { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 1rem; margin-bottom: 1.5rem; }
+footer { text-align: center; color: var(--muted); padding: 1.5rem; font-size: .9rem; }
+
+/* Info toko (Week 5 - Task 01) */
+.info-toko { list-style: none; margin: 1.1rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: .5rem 1.6rem; color: #cfe3d3; font-size: .95rem; }
