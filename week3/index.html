@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="RimbaCamp, penyewaan perlengkapan camping yang mudah, praktis, dan terpercaya." />
+  <title>RimbaCamp | Sewa Alat Camping</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#beranda" aria-label="RimbaCamp Beranda">
+        <span class="brand-mark">⌃</span>
+        <span>Rimba<span>Camp</span><small>GEAR UP. GO OUT.</small></span>
+      </a>
+
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Buka navigasi" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="main-nav" id="main-nav">
+        <a class="nav-link active" href="#beranda">Beranda</a>
+        <a class="nav-link" href="#katalog">Katalog</a>
+        <a class="nav-link" href="#cara-sewa">Cara Sewa</a>
+        <button class="nav-link nav-button" id="history-button" type="button">Riwayat Pesanan</button>
+        <button class="nav-link nav-button" id="admin-button" type="button">Dashboard Admin</button>
+      </nav>
+      <a class="nav-cta" href="#katalog">Mulai Sewa <span>↗</span></a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="beranda">
+      <div class="hero-orb orb-one"></div>
+      <div class="hero-orb orb-two"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow" id="hero-badge"><span class="eyebrow-dot"></span> TEMAN PETUALANGANMU</div>
+          <h1 id="hero-title">Jelajahi Alam, Tanpa Ribet Menyiapkan Perlengkapan.</h1>
+          <p id="hero-description">Sewa perlengkapan camping berkualitas dengan proses mudah. Pilih alat, cek ketersediaan, lalu pesan secara online.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#katalog">Jelajahi Katalog <span>→</span></a>
+            <a class="btn btn-ghost" href="#cara-sewa">Cara Penyewaan</a>
+          </div>
+          <div class="hero-proof">
+            <div class="proof-avatars"><span>⛺</span><span>🏕️</span><span>🌲</span></div>
+            <p><strong>Perjalanan lebih praktis</strong><br /><small>Perlengkapan siap menemani petualangan.</small></p>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="Ilustrasi suasana camping">
+          <div class="visual-topline"><span>YOUR NEXT ADVENTURE</span><span class="live-dot"></span></div>
+          <div class="mountain mountain-back"></div>
+          <div class="mountain mountain-front"></div>
+          <div class="moon"></div>
+          <div class="pine pine-a">♠</div><div class="pine pine-b">♠</div><div class="pine pine-c">♠</div>
+          <div class="tent-illustration"><div class="tent-flap"></div><div class="tent-door"></div></div>
+          <div class="camp-fire">✦</div>
+          <div class="visual-caption"><span class="caption-icon">✦</span><div><strong>Make memories outside</strong><small>Explore more, worry less.</small></div></div>
+          <div class="floating-tag"><span>✓</span> Gear checked & ready</div>
+        </div>
+      </div>
+      <div class="container hero-stats">
+        <div><strong>06+</strong><span>Pilihan perlengkapan</span></div>
+        <div><strong>24/7</strong><span>Akses katalog online</span></div>
+        <div><strong>Mudah</strong><span>Proses pemesanan</span></div>
+      </div>
+    </section>
+
+    <section class="catalog-section section-pad" id="katalog">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">PILIH PERLENGKAPAN</span>
+            <h2>Temukan gear untuk <em>petualanganmu.</em></h2>
+            <p>Pilih perlengkapan yang sesuai dengan kebutuhan perjalanan.</p>
+          </div>
+          <span class="catalog-count" id="catalog-count">6 perlengkapan</span>
+        </div>
+
+        <div class="filter-panel">
+          <label class="search-box">
+            <span>⌕</span>
+            <input id="search-input" type="search" placeholder="Cari tenda, carrier, sleeping bag..." autocomplete="off" />
+          </label>
+          <label class="select-wrap">
+            <span>Kategori</span>
+            <select id="category-filter">
+              <option value="semua">Semua kategori</option>
+              <option value="tenda">Tenda</option>
+              <option value="tas">Tas & carrier</option>
+              <option value="tidur">Perlengkapan tidur</option>
+              <option value="memasak">Peralatan masak</option>
+              <option value="aksesoris">Aksesori</option>
+            </select>
+          </label>
+          <label class="select-wrap">
+            <span>Urutkan</span>
+            <select id="sort-filter">
+              <option value="default">Rekomendasi</option>
+              <option value="low">Harga terendah</option>
+              <option value="high">Harga tertinggi</option>
+              <option value="name">Nama A-Z</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="product-grid" id="product-grid" aria-live="polite"></div>
+        <div class="empty-state hidden" id="empty-state">
+          <span>⌕</span><h3>Perlengkapan tidak ditemukan</h3>
+          <p>Coba gunakan kata kunci atau kategori yang berbeda.</p>
+          <button class="btn btn-outline" id="reset-filter" type="button">Reset pencarian</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-section section-pad" id="cara-sewa">
+      <div class="container">
+        <div class="section-heading centered">
+          <span class="section-kicker">TIGA LANGKAH MUDAH</span>
+          <h2>Siap berangkat dengan <em>RimbaCamp.</em></h2>
+          <p>Proses penyewaan dibuat sederhana agar kamu bisa fokus merencanakan perjalanan.</p>
+        </div>
+        <div class="steps-grid">
+          <article class="step-card"><span class="step-number">01</span><div class="step-icon">⌕</div><h3>Pilih Perlengkapan</h3><p>Temukan alat camping melalui katalog dan gunakan filter sesuai kebutuhan.</p></article>
+          <article class="step-card"><span class="step-number">02</span><div class="step-icon">▣</div><h3>Isi Data Penyewaan</h3><p>Pilih tanggal, durasi, dan jumlah perlengkapan yang ingin kamu sewa.</p></article>
+          <article class="step-card"><span class="step-number">03</span><div class="step-icon">✓</div><h3>Konfirmasi Pesanan</h3><p>Periksa ringkasan pesanan dan simpan bukti pemesananmu.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="admin-section hidden" id="admin-section">
+      <div class="container admin-panel">
+        <div class="section-heading">
+          <div><span class="section-kicker">PANEL PENGELOLA</span><h2>Dashboard <em>Admin.</em></h2><p>Ringkasan pesanan dari browser ini.</p></div>
+          <button class="icon-close" id="close-admin" type="button" aria-label="Tutup dashboard">×</button>
+        </div>
+        <div class="admin-stats">
+          <div><span>Total pesanan</span><strong id="admin-total-orders">0</strong></div>
+          <div><span>Total nilai pesanan</span><strong id="admin-total-value">Rp0</strong></div>
+          <div><span>Perlu konfirmasi</span><strong id="admin-pending">0</strong></div>
+        </div>
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead><tr><th>Kode</th><th>Pelanggan</th><th>Perlengkapan</th><th>Tanggal</th><th>Total</th><th>Status</th></tr></thead>
+            <tbody id="admin-table-body"><tr><td colspan="6" class="table-empty">Belum ada pesanan.</td></tr></tbody>
+          </table>
+        </div>
+        <p class="demo-note">Catatan: dashboard ini merupakan simulasi front-end. Data tersimpan pada localStorage browser, belum menggunakan database server.</p>
+      </div>
+    </section>
+
+    <section class="history-section hidden" id="history-section">
+      <div class="container history-panel">
+        <div class="section-heading">
+          <div><span class="section-kicker">PESANAN KAMU</span><h2>Riwayat <em>Penyewaan.</em></h2><p>Daftar pesanan yang tersimpan di browser ini.</p></div>
+          <button class="icon-close" id="close-history" type="button" aria-label="Tutup riwayat">×</button>
+        </div>
+        <div id="history-list" class="history-list"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="brand brand-footer" href="#beranda"><span class="brand-mark">⌃</span><span>Rimba<span>Camp</span><small>GEAR UP. GO OUT.</small></span></a>
+      <p>Persiapkan perlengkapan. Nikmati perjalanan.</p>
+      <span>© 2026 RimbaCamp. Demo project.</span>
+    </div>
+  </footer>
+
+  <!-- Modal pemesanan: digunakan pada Task 03 -->
+  <div class="modal-backdrop hidden" id="booking-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="booking-modal">
+      <button class="icon-close modal-close" id="close-modal" type="button" aria-label="Tutup form">×</button>
+      <span class="section-kicker">FORM PEMESANAN</span>
+      <h2 id="modal-title">Pesan perlengkapan</h2>
+      <p class="modal-intro">Lengkapi data berikut untuk membuat pesanan sewa.</p>
+      <div class="selected-product" id="selected-product"></div>
+      <form id="booking-form">
+        <input type="hidden" id="booking-product-id" />
+        <div class="form-grid">
+          <label>Nama penyewa<input id="customer-name" type="text" placeholder="Masukkan nama lengkap" required minlength="2" /></label>
+          <label>Nomor WhatsApp<input id="customer-phone" type="tel" placeholder="08xxxxxxxxxx" required pattern="[0-9+ ]{9,16}" /></label>
+          <label>Tanggal mulai sewa<input id="start-date" type="date" required /></label>
+          <label>Durasi (hari)<input id="duration" type="number" min="1" max="30" value="1" required /></label>
+          <label>Jumlah alat<input id="quantity" type="number" min="1" value="1" required /></label>
+        </div>
+        <div class="price-summary"><span>Estimasi total biaya</span><strong id="estimated-total">Rp0</strong></div>
+        <p class="form-hint" id="availability-hint">Pastikan jumlah alat sesuai ketersediaan.</p>
+        <button class="btn btn-primary btn-full" type="submit">Kirim Pesanan <span>→</span></button>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast hidden" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
